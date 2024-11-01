@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="admin-review-appoitments.css"> <!--palit-->
+        <script src="admin-review-appoitments.js" defer></script> <!--palit-->
+        <title>DMT LAW OFFICE</title>     
+    </head>
+
+    <body>
+        <header class="header">
+            <h3>DMT Law</h3>
+            <p>Good day, Admin</p>
+        </header>
+
+        <section class="sidebar">
+            <div class="logo">
+                <img src="./img/logo/dmt logo.png" alt="DMT Law Logo">                         
+                <h3>DMT Law</h3>
+            </div>
+            <nav class="navbar">        
+                <ul>
+                    <li class="active">                        
+                        <a href="admin-dashboard.html">
+                            <img src="./img/icons/admin/dashboard.png">Dashboard
+                        </a>                
+                    </li>
+                    <li>                        
+                        <a href="admin-appoinment.html">
+                            <img src="./img/icons/admin/appointment.png">Appointments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-calendar.html">
+                            <img src="./img/icons/admin/calendar.png">Calendar
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="admin-appoinment.html"> <!--palit-->
+                            <img src="./img/icons/admin/pay.png">My Bills
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="#"> <!--palit-->
+                            <img src="./img/icons/admin/case library.png">Case Library
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="#"> <!--palit-->
+                            <img src="./img/icons/admin/my client.png">Clients
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="#"> <!--palit-->
+                            <img src="./img/icons/admin/logbook.png">Logbook
+                        </a>
+                    </li>
+                    <li class="logout">             <!--palit-->           
+                        <a href="#">
+                            <img src="./img/icons/admin/logout.png">Log Out
+                        </a>
+                    </li>
+                </ul>
+            </nav>  
+        </section>
+        
+        <main class="main">
+            <div class="appointment"> <!--palit-->
+                <div class="reviewAppointment">
+                    <div class="appointmentsHeader">
+                        <h3>REVIEW APPOINTMENTS</h3>                        
+                        <a href="admin-appoinment.html" class="back-btn">Back</a>
+                    </div>                    
+                    <div class="reviewAppointmentsContent">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Appointment Type</th>
+                                    <th>Practice Area</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Assign to</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Kirsha Garcia</td>
+                                    <td>Consultation</td>
+                                    <td>Labor Law</td>
+                                    <td>08/28/2024</td>
+                                    <td>P.M.</td>
+                                    <td>
+                                        <select>
+                                            <option>Assign to</option>
+                                            <option>Lawyer 1</option>
+                                            <option>Lawyer 2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="accept-btn">Accept</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Michelle Jackson</td>
+                                    <td>Retainer</td>
+                                    <td>Corporate</td>
+                                    <td>09/01/2024</td>
+                                    <td>P.M.</td>
+                                    <td>
+                                        <select>
+                                            <option>Assign to</option>
+                                            <option>Lawyer 1</option>
+                                            <option>Lawyer 2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="accept-btn">Accept</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rochelle Roxas</td>
+                                    <td>Consultation</td>
+                                    <td>Uncertain</td>
+                                    <td>09/01/2024</td>
+                                    <td>A.M.</td>
+                                    <td>
+                                        <select>
+                                            <option>Assign to</option>
+                                            <option>Lawyer 1</option>
+                                            <option>Lawyer 2</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button class="accept-btn">Accept</button>
+                                        <button class="reject-btn">Reject</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="confirmModal" class="modal">
+                        <div class="modal-content">
+                            <h2>Are you sure?</h2>
+                            <p>Are you sure you want to reject this item? This action cannot be undone.</p>
+                            <button id="cancelReject" class="btn-cancel">Cancel</button>
+                            <button id="confirmReject" class="btn-reject2">Confirm</button>
+                        </div>
+                    </div>
+                    <div id="warningBox" class="warning-box">
+                        Please assign an attorney before accepting the appointment.
+                    </div>
+        
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

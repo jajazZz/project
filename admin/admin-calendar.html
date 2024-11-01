@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="admin-calendar.css"> <!--palit-->
+        <script src="admin-calendar.js" defer></script> <!--palit-->
+        <title>DMT LAW OFFICE</title>     
+    </head>
+
+    <body>
+        <header class="header">
+            <h3>DMT Law</h3>
+            <p>Good day, Admin</p>
+        </header>
+
+        <section class="sidebar">
+            <div class="logo">
+                <img src="./img/logo/dmt logo.png" alt="DMT Law Logo">                         
+                <h3>DMT Law</h3>
+            </div>
+            <nav class="navbar">        
+                <ul>
+                    <li class="active">                        
+                        <a href="admin-dashboard.html">
+                            <img src="./img/icons/admin/dashboard.png">Dashboard
+                        </a>                
+                    </li>
+                    <li>                        
+                        <a href="admin-appoinment.html">
+                            <img src="./img/icons/admin/appointment.png">Appointments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-calendar.html">
+                            <img src="./img/icons/admin/calendar.png">Calendar
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="admin-appoinment.html"> <!--palit-->
+                            <img src="./img/icons/admin/pay.png">My Bills
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="#"> <!--palit-->
+                            <img src="./img/icons/admin/case library.png">Case Library
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="#"> <!--palit-->
+                            <img src="./img/icons/admin/my client.png">Clients
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="#"> <!--palit-->
+                            <img src="./img/icons/admin/logbook.png">Logbook
+                        </a>
+                    </li>
+                    <li class="logout">           <!--palit-->             
+                        <a href="#">
+                            <img src="./img/icons/admin/logout.png">Log Out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        
+        <main class="main">
+            <div class="adminCalendar"> <!--palit-->
+                <div class="dashboard_content">
+                    <div class="calendar-header">        
+                        <b><p id="monthYear"></p></b>
+                        <div class="calendar_btn">
+                            <button onclick="prevMonth()"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button onclick="nextMonth()"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>                        
+                    </div>
+                    <table class="calendar">
+                        <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarBody"></tbody>
+                    </table>
+                </div>                
+                <div class="dashboard_content">
+                    <div class="content">
+                        <div class="content_header">
+                            <img src="./img/icons/admin/appointment.png">
+                            <h4>Appointments</h4>
+                        </div>
+                        <div class="content_details">
+                            <b><p>You have no appointments for today</p></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

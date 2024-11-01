@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="attorney-dashboard.css"> <!--palit-->
+        <script src="attorney-dashboard.js" defer></script> <!--palit-->
+        <title>DMT LAW OFFICE</title>     
+    </head>
+
+    <body>
+        <header class="header">
+            <h3>DMT Law</h3>
+            <p>Good day, Atty. Abalos</p>
+        </header>
+
+        <section class="sidebar">
+            <div class="logo">
+                <img src="./img/logo/dmt logo.png" alt="DMT Law Logo">                         
+                <h3>DMT Law</h3>
+            </div>
+            <nav class="navbar">        
+                <ul>
+                    <li class="active">                        
+                        <a href="attorney-dashboard.html">
+                            <img src="./img/icons/admin/dashboard.png">Dashboard
+                        </a>                
+                    </li>
+                    <li>                        
+                        <a href="attorney-appointment.html">
+                            <img src="./img/icons/admin/appointment.png">Appointments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="attorney-calendar.html"> <!--palit-->
+                            <img src="./img/icons/admin/calendar.png">Calendar
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="attorney-myclient.html"> <!--palit-->
+                            <img src="./img/icons/admin/my client.png">Clients
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="attorney-caselibrary.html"> <!--palit-->
+                            <img src="./img/icons/admin/case library.png">Case Library
+                        </a>
+                    </li>
+                    <li class="logout">             <!--palit-->           
+                        <a href="#">
+                            <img src="./img/icons/admin/logout.png">Log Out
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+        
+        <main class="main">
+            <div class="dashboard"> <!--palit-->
+                <div class="dashboard_content">
+                    <div class="admin">
+                        <p>Welcome, <b>Atty. Abalos!</b></p>
+                    </div>
+                    <div class="admin">
+                        <p><b id="currentmonth"></b></p>
+                        <p>Today is <b id="currentDate"></b></p>
+                    </div>
+                </div>
+                <div class="dashboard_content">
+                    <div class="calendar-header">        
+                        <b><p id="monthYear"></p></b>
+                        <div class="calendar_btn">
+                            <button onclick="prevMonth()"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button onclick="nextMonth()"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>                        
+                    </div>
+                    <table class="calendar">
+                        <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarBody"></tbody>
+                    </table>
+                </div>                
+                <div class="dashboard_content" id="toAppointment">
+                    <div class="content">
+                        <div class="content_header">
+                            <div class="left-side">
+                                <img src="./img/icons/admin/appointment.png">
+                                <h4>Appointments</h4>
+                            </div>
+                            <h4>Today</h4>
+                        </div>
+                        <div class="content_details">
+                            <b><p>You have no appointments for today</p></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard_content" id="toMyclients">
+                    <div class="content">
+                        <div class="clientContentHeader">
+                            <div class="left-side">
+                                <h4>Clients</h4>
+                            </div>
+                        </div>
+                        <div class="content_details">
+                            <b><p>You have no appointments for today</p></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
