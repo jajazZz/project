@@ -8,7 +8,7 @@ document.querySelectorAll('.navbar ul li').forEach(item => {
 /*start*/
 const clientsTableBody = document.getElementById("clientsTableBody");
 const previewContent = document.getElementById("previewContent");
-const closeButton = document.querySelector(".preview .close");
+const closeButton = document.querySelector(".myclientContent .close");
 
 const clientsData = [
   { id: 1, name: "Juan Dela Cruz", practiceArea: "Sample", status: "Ongoing" },
@@ -22,6 +22,11 @@ const clientsData = [
   { id: 9, name: "Jaja Santos", practiceArea: "Sample", status: "Done" },
   { id: 10, name: "Jaja Santos", practiceArea: "Sample", status: "Ongoing" },
   { id: 11, name: "Jaja Santos", practiceArea: "Sample", status: "Done" },
+  { id: 12, name: "Jana Santos", practiceArea: "Sample", status: "Done" },
+  { id: 13, name: "Airi Puyat", practiceArea: "Sample", status: "Done" },
+  { id: 14, name: "Shan Steele", practiceArea: "Sample", status: "Done" },
+  { id: 15, name: "Rex Intal", practiceArea: "Sample", status: "Done" },
+
 ];
 
 const clientDetails = {
@@ -152,6 +157,55 @@ const clientDetails = {
     details:
       "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,",
   },
+
+  12: {
+    caseTitle: "Sample",
+    petitioner: "Jana Santos",
+    court: "Sample",
+    caseNo: "Sample",
+    contractDate: "Sample",
+    contactNo: "Sample",
+    email: "Sample",
+    details:
+      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,",
+  },
+
+  13: {
+    caseTitle: "Sample",
+    petitioner: "Airi Puyat",
+    court: "Sample",
+    caseNo: "Sample",
+    contractDate: "Sample",
+    contactNo: "Sample",
+    email: "Sample",
+    details:
+      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,",
+  },
+
+  14: {
+    caseTitle: "Sample",
+    petitioner: "Shan Steele",
+    court: "Sample",
+    caseNo: "Sample",
+    contractDate: "Sample",
+    contactNo: "Sample",
+    email: "Sample",
+    details:
+      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,",
+  },
+
+  15: {
+    caseTitle: "Sample",
+    petitioner: "Rex Intal",
+    court: "Sample",
+    caseNo: "Sample",
+    contractDate: "Sample",
+    contactNo: "Sample",
+    email: "Sample",
+    details:
+      "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,",
+  },
+
 };
 
 function populateTable() {
@@ -159,21 +213,33 @@ function populateTable() {
   clientsData.forEach((client) => {
     const row = document.createElement("tr");
     row.setAttribute("data-client-id", client.id);
+
+    // Create button element separately to add an event listener
+    const buttonHtml =
+      client.status === "Ongoing"
+        ? "<button class='appointment-btn'>Make Appointment</button>"
+        : "";
+
     row.innerHTML = `
-            <td>${client.name}</td>
-            <td>${client.practiceArea}</td>
-            <td class="status-${client.status.toLowerCase()}">${
-      client.status
-    }</td>
-            <td>${
-              client.status === "Ongoing"
-                ? "<button>Make Appointment</button>"
-                : ""
-            }</td>
-        `;
+      <td>${client.name}</td>
+      <td>${client.practiceArea}</td>
+      <td class="status-${client.status.toLowerCase()}">${client.status}</td>
+      <td>${buttonHtml}</td>
+    `;
+
+    // Append row to table body
     clientsTableBody.appendChild(row);
+
+    // Add event listener to button if it exists
+    if (client.status === "Ongoing") {
+      const button = row.querySelector(".appointment-btn");
+      button.addEventListener("click", () => {
+        window.location.href = "attorney-client-appointment.html";
+      });
+    }
   });
 }
+
 
 function showPreview(clientId) {
   const client = clientDetails[clientId];

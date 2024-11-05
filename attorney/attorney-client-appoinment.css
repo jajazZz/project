@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: gainsboro;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+        "side head"
+        "side main";
+}
+
+.header {
+    background-color: white;
+    grid-area: head;
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0px 4px 26px 10px #00000011;    
+}
+
+.sidebar {
+    background-color: #000117;
+    height: 100vh;
+    grid-area: side;
+    position: fixed;
+    top: 0;    
+    width: 80px;    
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 245px;
+}
+
+.logo {
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 10px; 
+    white-space: nowrap;  
+}
+
+.logo h3 {
+    margin: 0;
+    
+}
+
+.logo img {    
+    margin: 30px 20px 30px 15px; 
+    width: 45px;
+    height: auto; 
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.navbar ul li a:hover {
+    background-color: #a88532; 
+    border-radius: 10px;
+    margin: 0px 20px 0px 20px;
+}
+
+.navbar ul li.active img {
+    background-color: gray;
+}
+
+.navbar ul li img {
+    margin: 20px 30px 20px 30px;
+    width: 20px;
+}
+
+.logout {
+    margin-top: 250px;
+}
+
+.main {
+    background-color: rgb(209, 217, 232);
+    grid-area: main;
+    padding: 20px 20px 0px 20px;
+}
+
+.dashboard {
+    background-color: white;
+    border-radius: 30px 30px 0px 0px;
+    height: calc(100vh - 120px);
+    padding: 25px;
+    gap: 13px;
+
+    display: grid;
+    grid-template-columns: 65% 1fr;
+    grid-template-areas: 
+        "calendar form";
+    
+}
+/*start*/
+  .calendar-container {
+    flex: 1.5;
+    background-color: #f7f7f7;
+    border-radius: 20px 0px 0px 20px;
+    padding: 20px 33px 20px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    grid-area: calendar;
+  }
+  
+  
+  .calendar-nav {
+    top: 90px;
+    right: 36px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .calendar-nav button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  .calendar-day.today {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    text-decoration: none;
+  }
+  
+  .calendar-day:hover:not(.past):not(.unavailable) {
+    background-color: #e6e6e6;
+  }
+  .calendar-day.today {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .calendar-day.past {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  .calendar-day.weekend {
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  .calendar-day.unavailable {
+    position: relative;
+    cursor: not-allowed;
+    border: 1px solid rgba(145, 145, 145, 0.637);
+    text-decoration: none !important;
+    color: #999;
+  }
+  
+  .calendar-day.unavailable::before {
+    content: "";
+    position: absolute;
+    top: 98%;
+    left: 0;
+    width: 138%;
+    height: 1px;
+    background-color: rgba(145, 145, 145, 0.637);
+    transform: rotate(-45deg);
+    transform-origin: left;
+    pointer-events: none;
+  }
+  
+  .appointment-form {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 36px 20px 20px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-left: -12px;
+    z-index: 1;
+    grid-area: form;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+  .form-group {
+    flex: 1;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .form-group input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .form-group select,
+  .form-group textarea,
+  .form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 22px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .form-group textarea {
+    height: 100px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .btn-primary {
+    background-color: #5dadf0;
+    color: rgb(0, 0, 0);
+  }
+  .btn-secondary {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid black;
+  }
+  #appointmentPreview {
+    height: 150px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-y: auto;
+    white-space: pre-line;
+  }
+  
+  select option:disabled {
+    color: #a5a4a4;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+  }
+  

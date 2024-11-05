@@ -1,248 +1,251 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
-    height: 100vh;
+  height: 100vh;
 }
 
 body {
-    background-color: gainsboro;
-    height: 100vh;
+  background-color: gainsboro;
+  height: 100vh;
 
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas: 
-        "side head"
-        "side main";
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "side head"
+    "side main";
 }
 
 .header {
-    background-color: white;
-    grid-area: head;
-    display: flex;    
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    box-shadow: 0px 4px 26px 10px #00000011;    
+  background-color: white;
+  grid-area: head;
+  display: flex;    
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0px 4px 26px 10px #00000011;    
 }
 
 .sidebar {
-    background-color: #000117;
-    height: 100vh;
-    grid-area: side;
-    position: fixed;
-    top: 0;    
-    width: 80px;    
-    transition: width 0.3s ease-in-out;
-    overflow: hidden;
+  background-color: #000117;
+  height: 100vh;
+  grid-area: side;
+  position: fixed;
+  top: 0;    
+  width: 80px;    
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .sidebar:hover {
-    width: 245px;
+  width: 245px;
 }
 
 .logo {
-    color: white;
-    display: flex;
-    align-items: center;
-    height: 100px;
-    margin-bottom: 10px; 
-    white-space: nowrap;  
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px; 
+  white-space: nowrap;  
 }
 
 .logo h3 {
-    margin: 0;
+  margin: 0;
     
 }
 
 .logo img {    
-    margin: 30px 20px 30px 15px; 
-    width: 45px;
-    height: auto; 
+  margin: 30px 20px 30px 15px; 
+  width: 45px;
+  height: auto; 
 }
 
 .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .navbar ul li a:hover {
-    background-color: #a88532; 
-    border-radius: 10px;
-    margin: 0px 20px 0px 20px;
+  background-color: #a88532; 
+  border-radius: 10px;
+  margin: 0px 20px 0px 20px;
 }
 
 .navbar ul li.active img {
-    background-color: gray;
+  background-color: gray;
 }
 
 .navbar ul li img {
-    margin: 20px 30px 20px 30px;
-    width: 20px;
+  margin: 20px 30px 20px 30px;
+  width: 20px;
 }
 
 .logout {
-    margin-top: 250px;
+  margin-top: 250px;
 }
 
 .main {
-    background-color: rgb(209, 217, 232);
-    grid-area: main;
-    padding: 20px 20px 0px 20px;
+  background-color: rgb(209, 217, 232);
+  grid-area: main;
+  padding: 20px 20px 0px 20px;
 }
 
 .myClient {
-    background-color: white;
-    border-radius: 30px 30px 0px 0px;
-    height: calc(100vh - 120px);
-    padding: 25px;
-    gap: 13px;
+  background-color: white;
+  border-radius: 30px 30px 0px 0px;
+  height: calc(100vh - 120px);
+  padding: 25px;
+  gap: 13px;
 }
 
 /*here*/
 .container {
-    gap: 1rem;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-        "c1 c1 preview";
+  gap: 1rem;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "c1 c1 preview";
   }
 
-  .client {
-    grid-area: c1;
-    background-color: grey;
-    border-radius: 15px;
-    padding: 1rem;
-    display: flex;
-    
+.myclientContent:nth-child(1) {
+  grid-area: c1;
+  background-color: white;
+}
 
-    display: grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas: 
-      "header"
-      "content";
-  }
-  
-  .preview {
-    background-color: gainsboro;
-    border-radius: 10px;
-    padding: 1rem;
-    display: flex;
-    grid-area: preview;
-  }
-  
-  .title {
-    padding: 0.5rem 0;
-    margin-bottom: 1rem;
-    background-color: #e0e6ee;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #343a40;
-    text-align: start;
-    padding: 18px;
-  }
-  
-  .clients-content,
-  .preview-content {
-    flex-grow: 1;
-    overflow: auto;
-    max-height: 400px;
-  }
-  
-  .preview {
-    position: relative;
-  }
-  
-  .preview .close {
-    position: absolute;
-    top: 7%;
-    right: 10%;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: #6c757d;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 0.5rem;
-  }
-  
-  th,
-  td {
-    text-align: left;
-    padding: 0.75rem;
-    border-radius: 3px;
-  }
-  
-  th {
-    background-color: #d8d0d091;
-    color: #495057;
-  }
-  
-  tr {
-    background-color: #fafafa;
-    transition: all 0.3s ease;
-  }
-  
-  tr:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  tr.selected {
-    font-weight: bold;
-    background-color: #e9ecef;
-  }
-  
-  tr.selected button {
-    background-color: #033b5b;
-    color: white;
-  }
-  
-  .status-ongoing {
-    color: #dc3545;
-  }
-  
-  .status-done {
-    color: #28a745;
-  }
-  
-  button {
-    background-color: #033b5bb6;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .preview h2 {
-    margin-top: 0;
-    color: #343a40;
-  }
-  
-  .preview p {
-    margin: 0.5rem 0;
-    color: #495057;
-  }
-  
+.myclientContent:nth-child(2) {
+  grid-area: preview;
+  background-color: gainsboro;
+}
+
+.myclientContent {
+  background-color: gainsboro;
+  border-radius: 10px;    
+
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: 
+    "header"
+    "content-details";
+}
+
+.contentHeader {
+  grid-area: header;
+  background-color: #E0E6EE;
+  padding: 20px;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.contenDetails {
+  grid-area: content-details;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.scrollable {
+  overflow-y: auto;
+  max-height: 300px;
+  position: relative;
+}
+
+.clients-content,
+.preview-content {
+  flex-grow: 1;
+  overflow: auto;
+  height: calc(100vh - 170px);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.preview-content {
+  background-color: #E0E6EE;
+}
+
+.previewDetails {
+  margin: 0px 20px 20px 20px;
+  padding: 20px;
+  background-color:  white;
+  height: calc(100vh - 230px);
+}
+
+.close {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #6c757d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0 0.5rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem;
+  padding-left: 20px;
+}
+
+th {
+  background-color: #d8d0d091;
+  color: #495057;
+}
+
+tr {
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+tr:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+tr.selected {
+  font-weight: bold;
+  background-color: #e9ecef;
+}
+
+tr.selected button {
+  background-color: #033b5b;
+  color: white;
+}
+
+.status-ongoing {
+  color: #dc3545;
+}
+
+.status-done {
+  color: #28a745;
+}
+
+button {
+  background-color: #033b5bb6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 100px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

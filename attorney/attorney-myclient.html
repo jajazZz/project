@@ -59,12 +59,35 @@
         <main class="main">
             <div class="myClient"> <!--palit-->
                 <div class="container">
-                    <div class="client">
-                        <p>my clients</p>
-                    </div>
-                    <div class="preview">
-                        <p>preview</p>
-                    </div>
+                    <div class="myclientContent">
+                        <div class="contentHeader">
+                          <h3>Clients</h3>
+                        </div>
+                        <div class="clients-content">
+                          <table id="clientsTable">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Practice Area</th>
+                                <th>Status</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody id="clientsTableBody" class="scrollable">
+                              <!-- Table body will be populated dynamically -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="myclientContent">
+                        <div class="contentHeader">
+                          <h3>Preview</h3>
+                          <span class="close">&times;</span>
+                        </div>
+                        <div class="preview-content">
+                          <div id="previewContent" class="previewDetails"></div>
+                        </div>
+                      </div>
                 </div>
             </div>
         </main>
